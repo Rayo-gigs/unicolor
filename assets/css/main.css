@@ -3804,3 +3804,45 @@ section,
   color: #fff;
   transform: translateY(-2px);
 }
+
+.price-table.dark {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #111;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  padding: 20px 30px;
+  color: #f8f9fa;
+}
+
+.price-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #333;
+}
+
+.price-item:last-child {
+  border-bottom: none;
+}
+
+.item-name {
+  font-weight: 500;
+  color: #eee;
+  font-size: 16px;
+}
+
+.item-price {
+  font-weight: 600;
+  color: #00d4ff;
+  font-size: 16px;
+}
+
+.price-item:hover {
+  background-color: #1a1a1a;
+  transition: 0.3s;
+  transform: translateX(3px);
+}
+
+
