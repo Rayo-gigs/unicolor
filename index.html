@@ -1013,18 +1013,24 @@
       <p>Fill out the form below to order your preferred plan. We’ll get in touch to confirm the details.</p>
     </div>
 
-    <form action="https://formspree.io/f/your_form_id" method="POST" class="row g-3 needs-validation" novalidate>
+    <form action="https://api.web3forms.com/submit" method="POST" class="row g-3 needs-validation" novalidate>
+      <input type="hidden" name="access_key" value="e3d50f48-1e68-4838-98a0-6caa1494579f">
 
-      <!-- Name -->
-      <div class="col-md-6">
+       <!-- Name -->
+       <div class="col-md-6">
+        <div class="input-with-icon">
+          <i class="bi bi-person"></i>
         <label for="name" class="form-label">Full Name</label>
-        <input type="text" name="name" id="name" class="form-control" placeholder="Your full name" required>
+        <input type="text" name="name" id="name" class="form-control" autocomplete="name" placeholder="Your full name" required>
+
+        </div>
       </div>
+
 
       <!-- Email -->
       <div class="col-md-6">
         <label for="email" class="form-label">Email Address</label>
-        <input type="email" name="email" id="email" class="form-control" placeholder="you@example.com" required>
+        <input type="email" name="email" id="email" class="form-control" autocomplete="email" placeholder="you@example.com" required>
       </div>
 
       <!-- Phone -->
@@ -1035,15 +1041,17 @@
           name="phone" 
           id="phone" 
           class="form-control" 
-          placeholder="+1 234 567 890" 
+          autocomplete="tel"
+          placeholder="+254 7 123 456 78" 
           pattern="[0-9+\-\s()]{7,}" 
           required>
       </div>
 
       <!-- Item -->
       <div class="col-md-6">
-        <label for="name" class="form-label">Item</label>
-        <input type="text" item="item" id="item" class="form-control" placeholder="What item would you like to purchase" required>
+        <label for="item" class="form-label">Item</label>
+        <textarea name="item" id="item" class="form-control" placeholder="What item would you like to purchase" required></textarea>
+        
       </div>
 
       <!-- Quantity -->
@@ -1204,31 +1212,38 @@
             <div class="contact-form-wrapper">
               <h2 class="text-center mb-4">Get in Touch</h2>
 
-              <form action="forms/contact.php" method="post" class="php-email-form">
+              <form action="https://api.web3forms.com/submit" method="POST" autocomplete="off" class="row g-3 needs-validation" novalidate>
+                <input type="hidden" name="access_key" value="e3d50f48-1e68-4838-98a0-6caa1494579f">
                 <div class="row g-3">
                   <div class="col-md-6">
                     <div class="form-group">
                       <div class="input-with-icon">
                         <i class="bi bi-person"></i>
-                        <input type="text" class="form-control" name="name" placeholder="First Name" required="">
+                        <input type="text" class="form-control" name="name" autocomplete="name" placeholder="First Name" required="">
                       </div>
                     </div>
                   </div>
+
+                 
 
                   <div class="col-md-6">
                     <div class="form-group">
                       <div class="input-with-icon">
                         <i class="bi bi-envelope"></i>
-                        <input type="email" class="form-control" name="email" placeholder="Email Address" required="">
+                        <input type="email" class="form-control" name="email" autocomplete="email" placeholder="Email Address" required="">
                       </div>
                     </div>
                   </div>
 
-                  <div class="col-md-12">
+                  
+
+                  <div class="col-md-6">
                     <div class="form-group">
                       <div class="input-with-icon">
                         <i class="bi bi-text-left"></i>
-                        <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                        <input type="text" class="form-control" name="subject" placeholder="subject" required="">
+                        
+                        
                       </div>
                     </div>
                   </div>
@@ -1242,11 +1257,7 @@
                     </div>
                   </div>
 
-                  <div class="col-12">
-                    <div class="loading">Loading</div>
-                    <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
-                  </div>
+                  
 
                   <div class="col-12 text-center">
                     <button type="submit" class="btn btn-primary btn-submit">SEND MESSAGE</button>
