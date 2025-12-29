@@ -3845,6 +3845,159 @@ section,
   transform: translateX(3px);
 }
 
+/* SECTION BACKGROUND */
+.contact-section {
+  background: #1c2a32;
+  padding: 60px;
+  border-radius: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* TITLE */
+.form-title {
+  color: #ffffff;
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.form-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #f4a63c;
+  margin: 12px auto 0;
+}
+
+/* FORM GRID */
+.styled-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.styled-form textarea,
+.styled-form button {
+  grid-column: span 2;
+}
+
+/* FORM GROUP */
+.form-group {
+  position: relative;
+}
+
+/* INPUTS */
+.styled-form input,
+.styled-form textarea {
+  width: 100%;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.styled-form input::placeholder,
+.styled-form textarea::placeholder {
+  color: #9aa6ac;
+}
+
+/* FOCUS EFFECT */
+.styled-form input:focus,
+.styled-form textarea:focus {
+  border-color: #f4a63c;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* TEXTAREA */
+.styled-form textarea {
+  min-height: 150px;
+  resize: none;
+}
+
+/* BUTTON */
+.btn-primary {
+  background: #f4a63c;
+  color: #1c2a32;
+  border: none;
+  padding: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(244, 166, 60, 0.3);
+}
+
+
+@media (max-width: 768px) {
+  .styled-form {
+    grid-template-columns: 1fr;
+  }
+
+  .styled-form textarea,
+  .styled-form button {
+    grid-column: span 1;
+  }
+}
+
+
+/* Make all swiper slides equal height */
+.swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+/* Card container */
+.testimonial-item {
+  background: #111; /* optional */
+  border-radius: 16px;
+  padding: 40px;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center content vertically */
+.client-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Logo sizing (VERY IMPORTANT) */
+.client-logo {
+  width: 100%;
+  max-width: 260px;     /* same width for all */
+  height: 120px;        /* fixed height */
+  object-fit: contain;  /* prevents distortion */
+  margin-bottom: 16px;
+}
+
+/* Client name */
+.client-info h6 {
+  min-height: 40px; /* keeps text area consistent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
 
 
 
