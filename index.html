@@ -33,6 +33,14 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+
   <!-- =======================================================
   * Template Name: Strategy
   * Template URL: https://bootstrapmade.com/strategy-bootstrap-agency-template/
@@ -1085,38 +1093,57 @@
     </section><!-- /Team Section -->
 
     <!-- Order Form Section -->
-    <section class="contact-section">
-      <h2 class="form-title">Purchase an item from the shop Today!</h2>
-    
-      <form class="styled-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="fd6d54cc-b201-4ea6-9586-4056aed555aa">
-    
-        <div class="form-group">
-          <input type="text" name="name" placeholder="Full Name" autocomplete="name">
-        </div>
-      
-        <div class="form-group">
-          <input type="email" name="email" placeholder="Email Address" autocomplete="email">
-        </div>
-        
-        <div class="form-group">
-          <input type="tel" name="phone" placeholder="Telephone No" autocomplete="tel">
-        </div>
+<section class="contact-section">
+  <h2 class="form-title">Purchase an item from the shop Today!</h2>
 
-        <div class="form-group">
-          <input type="text" name="item" placeholder="Item you would like to purchase">
-        </div>
-        
-        <div class="form-group">
-          <textarea name="message" placeholder="Any details you would like to add"></textarea>
-        </div>
-        
-        <button type="submit" class="btn-primary">SUBMIT</button>
-        
-      </form>
-    </section>
+  <form class="styled-form" id="orderForm">
     
+    <div class="form-group input-icon">
+      <i class="fa-solid fa-user"></i>
+      <input type="text" id="name" name="name" placeholder="Full Name" required>
+    </div>
+    
+
+    <div class="form-group input-icon">
+      <i class="fa-solid fa-envelope"></i>
+      <input type="email" id="email" name="email" placeholder="Email Address" required>
+    </div>
+    
+
+    <div class="form-group input-icon">
+      <i class="fa-solid fa-phone"></i>
+      <input type="tel" id="phone" name="phone" placeholder="Telephone No" required>
+    </div>
+    
+
+    <div class="form-group input-icon">
+      <i class="fa-solid fa-box"></i>
+      <input type="text" id="item" name="item" placeholder="Item you would like to purchase" required>
+    </div>
+    
+
+    <div class="form-group input-icon textarea-icon">
+      <i class="fa-solid fa-message"></i>
+      <textarea id="message" name="message" placeholder="Any details you would like to add"></textarea>
+    </div>
+    
+
+    <div class="submit-row">
+      <button type="submit" class="whatsapp-submit-btn">
+        <i class="fa-brands fa-whatsapp"></i>
+        SUBMIT
+      </button>
+    </div>
+    
+    
+    <p class="form-success" id="formSuccess">
+      Redirecting you to WhatsApp…
+    </p>
+
+  </form>
+</section>
 <!-- /Order Form Section -->
+
 
 
 
@@ -1254,14 +1281,15 @@
             <div class="contact-form-wrapper">
               <h2 class="text-center mb-4">Get in Touch</h2>
 
-              <form action="https://api.web3forms.com/submit" method="POST" autocomplete="off" class="row g-3 needs-validation" novalidate>
-                <input type="hidden" name="access_key" value="fd6d54cc-b201-4ea6-9586-4056aed555aa">
+              <form id="contactForm" autocomplete="off" class="row g-3 needs-validation" novalidate>
+
+                
                 <div class="row g-3">
                   <div class="col-md-6">
                     <div class="form-group">
                       <div class="input-with-icon">
                         <i class="bi bi-person"></i>
-                        <input type="text" class="form-control" name="name" autocomplete="name" placeholder="First Name" required="">
+                        <input type="text" class="form-control" id="contact-name" name="name" autocomplete="name" placeholder="First Name" required="">
                       </div>
                     </div>
                   </div>
@@ -1272,7 +1300,7 @@
                     <div class="form-group">
                       <div class="input-with-icon">
                         <i class="bi bi-envelope"></i>
-                        <input type="email" class="form-control" name="email" autocomplete="email" placeholder="Email Address" required="">
+                        <input type="email" class="form-control" id="contact-email" name="email" autocomplete="email" placeholder="Email Address" required="">
                       </div>
                     </div>
                   </div>
@@ -1283,7 +1311,7 @@
                     <div class="form-group">
                       <div class="input-with-icon">
                         <i class="bi bi-text-left"></i>
-                        <input type="text" class="form-control" name="subject" placeholder="subject" required="">
+                        <input type="text" class="form-control" id="contact-subject" name="subject" placeholder="subject" required="">
                         
                         
                       </div>
@@ -1294,7 +1322,7 @@
                     <div class="form-group">
                       <div class="input-with-icon">
                         <i class="bi bi-chat-dots message-icon"></i>
-                        <textarea class="form-control" name="message" placeholder="Write Message..." style="height: 180px" required=""></textarea>
+                        <textarea class="form-control" id="contact-message" name="message" placeholder="Write Message..." style="height: 180px" required=""></textarea>
                       </div>
                     </div>
                   </div>
@@ -1302,9 +1330,18 @@
                   
 
                   <div class="col-12 text-center">
-                    <button type="submit" class="btn btn-primary btn-submit">SEND MESSAGE</button>
+                    <button type="submit" class="btn-primary">
+                      <i class="fa-brands fa-whatsapp"></i>
+                      SUBMIT
+                    </button>
                   </div>
                 </div>
+
+                <p class="form-success contact-success" id="contactFormSuccess">
+                  Redirecting you to WhatsApp…
+                </p>
+                
+
               </form>
             </div>
           </div>
@@ -1393,6 +1430,98 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    document.getElementById("orderForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+    
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const item = document.getElementById("item").value.trim();
+      const message = document.getElementById("message").value.trim();
+    
+      if (!name || !email || !phone || !item) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+    
+      const whatsappNumber = "254720329807"; // NO +, NO spaces
+    
+      const text = encodeURIComponent(
+        `🛒 NEW ORDER REQUEST\n\n` +
+        `👤 Name: ${name}\n` +
+        `📧 Email: ${email}\n` +
+        `📞 Phone: ${phone}\n` +
+        `📦 Item: ${item}\n\n` +
+        `📝 Details:\n${message || "None"}`
+      );
+    
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const url = isMobile
+        ? `https://wa.me/${whatsappNumber}?text=${text}`
+        : `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${text}`;
+    
+      document.getElementById("formSuccess").classList.add("show");
+    
+      setTimeout(() => {
+        window.open(url, "_blank");
+      }, 700);
+    });
+    </script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  
+    const form = document.getElementById("contactForm");
+    if (!form) {
+      console.error("contactForm not found");
+      return;
+    }
+  
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+  
+      const name = document.getElementById("contact-name")?.value.trim();
+      const email = document.getElementById("contact-email")?.value.trim();
+      const subject = document.getElementById("contact-subject")?.value.trim();
+      const message = document.getElementById("contact-message")?.value.trim();
+  
+      if (!name || !email || !subject || !message) {
+        alert("Please fill in all fields.");
+        return;
+      }
+  
+      const whatsappNumber = "254720329807"; // NO +
+  
+      const text = encodeURIComponent(
+        `📩 NEW CONTACT MESSAGE\n\n` +
+        `👤 Name: ${name}\n` +
+        `📧 Email: ${email}\n` +
+        `📌 Subject: ${subject}\n\n` +
+        `💬 Message:\n${message}`
+      );
+  
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const url = isMobile
+        ? `https://wa.me/${whatsappNumber}?text=${text}`
+        : `https://web.whatsapp.com/send?phone=${whatsappNumber}&text=${text}`;
+  
+      document.getElementById("formSuccess")?.classList.add("show");
+  
+      setTimeout(() => {
+        window.open(url, "_blank");
+      }, 500);
+    });
+  });
+  </script>
+  
+  
+
+
+  
+    
 
 </body>
 

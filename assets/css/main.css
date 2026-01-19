@@ -3991,6 +3991,130 @@ section,
   color: rgb(247, 246, 246);
 }
 
+.form-success {
+  opacity: 0;
+  margin-top: 15px;
+  color: #25D366;
+  font-weight: 600;
+  transform: translateY(10px);
+  transition: all 0.4s ease;
+}
+
+.form-success.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary i {
+  margin-right: 8px;
+  font-size: 18px;
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon i {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #888;
+  pointer-events: none;
+}
+
+.input-icon input,
+.input-icon textarea {
+  padding-left: 44px;
+}
+
+/* Fix icon alignment for textarea */
+.textarea-icon i {
+  top: 18px;
+  transform: none;
+}
+
+.contact-success {
+  opacity: 0;
+  visibility: hidden;
+  margin-top: 15px;
+  color: #25D366;
+  font-weight: 600;
+  text-align: center;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.contact-success.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.whatsapp-submit-btn {
+  background-color: #fbb034; /* yellow like screenshot */
+  color: #111;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(251, 176, 52, 0.35);
+}
+
+.whatsapp-submit-btn i {
+  font-size: 18px;
+}
+
+.whatsapp-submit-btn:hover {
+  background-color: #e6a12f;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(251, 176, 52, 0.45);
+}
+
+.whatsapp-submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 18px rgba(251, 176, 52, 0.35);
+}
+
+.submit-row {
+  margin-top: 30px;
+}
+
+/* Your form layout */
+.styled-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* Make textarea span full width */
+.styled-form .textarea-icon {
+  grid-column: 1 / -1;
+}
+
+/* FORCE submit button to bottom */
+.submit-row {
+  grid-column: 1 / -1; /* 🔥 THIS IS THE KEY */
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+
+
+
 
 
 

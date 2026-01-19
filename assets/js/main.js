@@ -212,4 +212,36 @@
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
+
+
 })();
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contactForm");
+  const successMsg = document.getElementById("formSuccess");
+
+  if (!form) return; // prevents breaking other pages
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("contact-name").value.trim();
+    const email = document.getElementById("contact-email").value.trim();
+    const subject = document.getElementById("contact-subject").value.trim();
+    const message = document.getElementById("contact-message").value.trim();
+
+    successMsg.style.display = "block";
+
+    const whatsappMessage =
+      `Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
+
+    const phoneNumber = "254720329807"; // replace with your number
+    const whatsappURL =
+      `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+    setTimeout(() => {
+      window.open(whatsappURL, "_blank");
+    }, 800);
+  });
+});
+
